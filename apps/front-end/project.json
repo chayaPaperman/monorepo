@@ -1,0 +1,77 @@
+{
+    "name": "front-end",
+    "projectType": "application",
+    "sourceRoot": "apps/front-end/src",
+    "prefix": "app",
+    "targets": {
+      "build": {
+        "executor": "@nrwl/angular:webpack-browser",
+        "outputs": ["{options.outputPath}"],
+        "options": {
+          "outputPath": "dist/apps/front-end",
+          "index": "apps/front-end/src/index.html",
+          "main": "apps/front-end/src/main.ts",
+          "tsConfig": "apps/front-end/tsconfig.app.json",
+          "assets": ["apps/front-end/src/favicon.ico", "apps/front-end/src/assets"],
+          "styles": ["apps/front-end/src/styles.css"],
+          "scripts": [],
+          "allowedCommonJsDependencies": [
+        "lodash"
+     ]
+        },
+        "configurations": {
+          "production": {
+            "fileReplacements": [
+              {
+                "replace": "apps/front-end/src/environments/environment.ts",
+                "with": "apps/front-end/src/environments/environment.prod.ts"
+              }
+            ],
+            "optimization": true,
+            "outputHashing": "all",
+            "sourceMap": false,
+            "extractCss": true,
+            "namedChunks": false,
+            "aot": true,
+            "extractLicenses": true,
+            "vendorChunk": false,
+            "buildOptimizer": true,
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }
+            ]
+          }
+        }
+      },
+      "serve": {
+        "executor": "@nrwl/angular:dev-server",
+        "options": {
+          "buildTarget": "front-end:build"
+        },
+        "configurations": {
+          "production": {
+            "buildTarget": "front-end:build:production"
+          }
+        }
+      },
+      "lint": {
+        "executor": "@nrwl/linter:eslint",
+        "options": {
+          "lintFilePatterns": ["apps/front-end/**/*.ts"]
+        }
+      },
+      "test": {
+        "executor": "@nrwl/jest:jest",
+        "outputs": ["coverage/apps/front-end"],
+        "options": {
+          "jestConfig": "apps/front-end/jest.config.js",
+          "passWithNoTests": true
+        }
+      }
+    },
+    "tags": []
+  }
+  
