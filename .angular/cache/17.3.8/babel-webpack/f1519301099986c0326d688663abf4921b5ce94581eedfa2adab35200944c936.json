@@ -1,1 +1,0 @@
-{"ast":null,"code":"export const API_URL = 'http://localhost:8080';\nexport const AUTH_ENDPOINT = `${API_URL}/auth`;\nexport const USER_ENDPOINT = `${API_URL}/users`;\nexport const DOCS_ENDPOINT = `${API_URL}/docs`;","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
