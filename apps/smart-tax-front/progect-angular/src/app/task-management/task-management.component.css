@@ -1,0 +1,30 @@
+.board {
+  display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  width: 30%;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.task-textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+p-button {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+p-card {
+  padding: 5px;
+}

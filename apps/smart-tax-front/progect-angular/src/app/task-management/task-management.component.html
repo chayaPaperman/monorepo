@@ -1,0 +1,23 @@
+<div class="board">
+    <div class="column">
+      <h2>To do</h2>
+      <textarea pInputTextarea #newTaskTodo class="task-textarea" placeholder="Add new task"></textarea>
+      <p-button label="Add" icon="pi pi-plus" (click)="addTask('todo', newTaskTodo.value); newTaskTodo.value=''"></p-button>
+      <p-card *ngFor="let task of tasks.todo">{{ task }}</p-card>
+    </div>
+    <div class="column">
+      <h2>In progress</h2>
+      <textarea pInputTextarea #newTaskInProgress class="task-textarea" placeholder="Add new task"></textarea>
+      <p-button label="Add" icon="pi pi-plus" (click)="addTask('inProgress', newTaskInProgress.value); newTaskInProgress.value=''"></p-button>
+      <p-card *ngFor="let task of tasks.inProgress">{{ task }}</p-card>
+    </div>
+    <div class="column">
+      <h2>Done</h2>
+      <textarea pInputTextarea #newTaskDone class="task-textarea" placeholder="Add new task"></textarea>
+      <p-button label="Add" icon="pi pi-plus" (click)="addTask('done', newTaskDone.value); newTaskDone.value=''"></p-button>
+      <p-card *ngFor="let task of tasks.done">{{ task }}</p-card>
+    </div>
+  </div>
+  
+
+   <p-button label="Add" icon="pi pi-plus" ></p-button>
